@@ -4,13 +4,17 @@
 <link rel="stylesheet" href="experiment.css" />
 </head>
 <body>
-<canvas  width="640" height="480" id = "canvas"></canvas>
+<canvas  width="1040" height="940" id = "canvas"></canvas>
+<audio id="sound1" src="take_pic.mp3" preload="auto"></audio>
+<div id = "div_b">
+	<input width="80" height = "80" type="image" value="submit" src="save.png" alt="submit Button" onclick = "salveaza();document.getElementById('sound1').play();">
+	<input width="80" height = "80" type="image" value="submit" src="mask.png" alt="submit Button" id = "button" >
+	<input width="80" height = "80" type="image" value="submit" src="mask3.png" alt="submit Button" id = "button1" >
+	<input width="80" height = "80" type="image" value="submit" src="mask5.png" alt="submit Button" id = "button2" >
+	<input width="80" height = "80" type="image" value="submit" src="mask2.png" alt="submit Button" id = "button3" >
+	<input width="80" height = "80" type="image" value="submit" src="mask1.png" alt="submit Button" id = "button4">
 
-<input width="50" height = "50" type="image" value="submit" src="save.png" alt="submit Button" onclick = "salveaza()"">
-<input width="50" height = "50" type="image" value="submit" src="mask.png" alt="submit Button" id = "button" onclick = "processWebcamVideo1()">
-<input width="50" height = "50" type="image" value="submit" src="mask3.png" alt="submit Button" id = "button1" onclick = "processWebcamVideo()">
-<input width="50" height = "50" type="image" value="submit" src="mask4.png" alt="submit Button" id = "button" onclick = "processWebcamVideo1()">
-
+	</div>
 
 <script src="javascript.js"/></script>
 <script src = "ccv.js"></script>
