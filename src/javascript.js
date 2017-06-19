@@ -4,20 +4,23 @@ navigator.getUserMedia || (navigator.getUserMedia = navigator.webkitGetUserMedia
 var video = document.createElement("video");
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-var mask = new Image();
 var mask1 = new Image();
-mask.src = "mask3.png";
 mask1.src = "mask.png";
 var mask2 = new Image();
-mask2.src = "mask5.png";
+mask2.src = "mask3.png";
 var mask3 = new Image();
-mask3.src = "mask1.png";
+mask3.src = "mask5.png";
 var mask4 = new Image();
-mask4.src = "mask2.png";
-var originalFace;
+mask4.src = "mask1.png";
+var mask5 = new Image();
+mask5.src = "mask2.png";
+var e = document.getElementById("masca");
+e.addEventListener("onchange", success_stream);
+var b = document.getElementById("button");
+var b1= document.getElementById("button1");
 
-var b1 = document.getElementById("button");
-b1.addEventListener("mousedown", drawMasks);
+if (b) mask = mask.src = "mask.png";
+if (b1) mask = mask.src = "mask1.png";
 
 //video.addEventListener("touchstart",capteaza);
 //video.addEventListener("mousedown",capteaza);
@@ -63,24 +66,40 @@ function drawMasks(faces)
 		//context.drawImage(mask2, face.x * 1.0, face.y * 1.1, face.width * 1.15, face.height * 0.9);
 		//+nas
 		//context.drawImage(mask3, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.0);
-		context.drawImage(mask2, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.3);
+		//context.drawImage(mask2, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.3);
 		//bambi
 		//context.drawImage(mask4, face.x * 0.9, face.y * 0.3, face.width * 1.3, face.height * 1.8);
+		if (e.value==1)
+		{
+			mask = mask1;
+			context.drawImage(mask, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.3);
+		}
+		if (e.value==2)
+		{
+			mask = mask2;
+			context.drawImage(mask, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.3);
+		}
+		if (e.value==3)
+		{
+			mask = mask3;
+			context.drawImage(mask, face.x * 1.0, face.y * 1.1, face.width * 1.15, face.height * 0.9);
+		}
+		if (e.value==4)
+		{
+			mask = mask4;
+			context.drawImage(mask, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.0);
+		}
+		if (e.value==5)
+		{
+			mask = mask5;
+			context.drawImage(mask, face.x * 0.9, face.y * 0.5, face.width * 1.3, face.height * 1.8);
+		}
+		
 		
 	}
 	
 }
-function set_mask()
-{
-	
-}
-// function capteaza()
-// {
-	// var img = new Image();
-	// img.width=canvas.width = video.width;
-	// img.height=canvas.height = video.height;
-	// context.drawImage(img, 0, 0, canvas.width, canvas.height);
-// }
+
 function salveaza() {
     var MIME_TYPE = "image/png";
 
