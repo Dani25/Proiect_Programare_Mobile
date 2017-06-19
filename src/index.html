@@ -7,15 +7,16 @@
 <canvas  width="1040" height="940" id = "canvas"></canvas>
 <audio id="sound1" src="take_pic.mp3" preload="auto"></audio>
 <div id = "div_b">
-	<input width="80" height = "80" type="image" value="submit" src="save.png" alt="submit Button" onclick = "salveaza();document.getElementById('sound1').play();">
-	<input width="80" height = "80" type="image" value="submit" src="mask.png" alt="submit Button" id = "button" >
-	<input width="80" height = "80" type="image" value="submit" src="mask3.png" alt="submit Button" id = "button1" >
-	<input width="80" height = "80" type="image" value="submit" src="mask5.png" alt="submit Button" id = "button2" >
-	<input width="80" height = "80" type="image" value="submit" src="mask2.png" alt="submit Button" id = "button3" >
-	<input width="80" height = "80" type="image" value="submit" src="mask1.png" alt="submit Button" id = "button4">
-
+	<input width="100" height = "100" type="image" value="submit" src="save.png" alt="submit Button" onclick = "salveaza();document.getElementById('sound1').play();">
+	
 	</div>
-
+<select id="masca">
+  <option value="1">Masca1</option>
+  <option value="2">Masca2</option>
+  <option value="3">Masca3</option>
+  <option value="4">Masca4</option>
+  <option value="5">Masca5</option>
+</select>
 <script src="javascript.js"/></script>
 <script src = "ccv.js"></script>
 <script src = "face.js"></script>
