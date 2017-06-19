@@ -12,12 +12,8 @@
 	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);	
 }
-#canvas{
-	width: 100%;
-
-}
-#video{
-	width: 100%;
-	position: relative;
-
+#div_b
+{
+	position:relative;
+	margin-left:0 px;
 }
