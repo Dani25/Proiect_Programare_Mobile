@@ -2,8 +2,10 @@
 navigator.getUserMedia || (navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
 var video = document.createElement("video");
+
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
+
 var mask1 = new Image();
 mask1.src = "mask.png";
 var mask2 = new Image();
@@ -14,16 +16,10 @@ var mask4 = new Image();
 mask4.src = "mask1.png";
 var mask5 = new Image();
 mask5.src = "mask2.png";
+
 var e = document.getElementById("masca");
 e.addEventListener("onchange", success_stream);
-var b = document.getElementById("button");
-var b1= document.getElementById("button1");
 
-if (b) mask = mask.src = "mask.png";
-if (b1) mask = mask.src = "mask1.png";
-
-//video.addEventListener("touchstart",capteaza);
-//video.addEventListener("mousedown",capteaza);
 video.addEventListener("touchstart",salveaza);
 video.addEventListener("mousedown",salveaza);
 
@@ -45,7 +41,7 @@ function processWebcamVideo()
 	context.drawImage(video, 0, 0, canvas.width, canvas.height);
 	var faces = detectFaces();
 	drawMasks(faces);
-	setTimeout(processWebcamVideo, 1);
+	setTimeout(processWebcamVideo, 100);
 	}
 
 function detectFaces() 
@@ -62,13 +58,7 @@ function drawMasks(faces)
 	for (var i = 0; i < faces.length; i++) 
 	{
         var face = faces[i];
-		//ochelari si mustata
-		//context.drawImage(mask2, face.x * 1.0, face.y * 1.1, face.width * 1.15, face.height * 0.9);
-		//+nas
-		//context.drawImage(mask3, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.0);
-		//context.drawImage(mask2, face.x * 0.9, face.y * 0.9, face.width * 1.3, face.height * 1.3);
-		//bambi
-		//context.drawImage(mask4, face.x * 0.9, face.y * 0.3, face.width * 1.3, face.height * 1.8);
+
 		if (e.value==1)
 		{
 			mask = mask1;
