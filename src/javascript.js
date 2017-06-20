@@ -6,6 +6,7 @@ var video = document.createElement("video");
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
+//add masks
 var mask1 = new Image();
 mask1.src = "mask.png";
 var mask2 = new Image();
@@ -24,6 +25,7 @@ video.addEventListener("touchstart",salveaza);
 video.addEventListener("mousedown",salveaza);
 
 constraints = {video: true};
+
 navigator.getUserMedia(constraints, success_stream, error);
 
 function success_stream(stream)
